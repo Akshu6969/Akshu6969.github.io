@@ -8,80 +8,83 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            background-color: #f0f4f8; /* Light blue-grey background */
+            background-color: #f7f3e8; /* Light parchment background */
             font-family: 'Century Gothic', 'Segoe UI', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            color: #8fa3c2; 
+            color: #4a4a4a;
         }
         .portfolio-container {
-            display: flex;
             width: 85%;
             max-width: 1100px;
             height: 85vh;
-            align-items: flex-start;
-        }
-        /* Left Sidebar Navigation */
-        .sidebar {
             display: flex;
             flex-direction: column;
-            margin-top: 40px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        /* Top Navigation Bar */
+        .navbar {
+            background-color: #2c3e50; /* Dark charcoal */
+            color: white;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
         }
         .tab {
-            background-color: #b3c6e6; 
-            color: white;
-            padding: 25px 12px;
-            margin-bottom: 5px;
-            border-radius: 8px 0 0 8px;
+            color: #d1b773; /* Gold */
+            padding: 0 25px;
             text-decoration: none;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg); /* Rotates the text to match the screenshot */
-            text-align: center;
-            font-size: 15px;
-            letter-spacing: 1px;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s, background-color 0.3s;
+            height: 100%;
+            display: flex;
+            align-items: center;
             cursor: pointer;
         }
         .tab.active {
-            background-color: white;
-            color: #7a93bd;
+            background-color: #bfa562; /* Brighter gold for active tab */
+            color: white;
         }
         .tab:hover:not(.active) {
-            background-color: #9ab0d6;
+            background-color: #3e5871;
+            color: white;
         }
         /* Main Content Box */
         .main-content {
             background-color: white;
             flex-grow: 1;
-            height: 100%;
             padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-radius: 0 8px 8px 8px;
         }
         .profile-img {
             width: 160px;
             height: 160px;
-            border-radius: 50%; /* Makes the image a perfect circle */
+            border-radius: 50%;
             object-fit: cover;
             margin-bottom: 25px;
         }
         h1 {
-            color: #6b84b5; 
+            color: #333;
             font-weight: normal;
             margin: 10px 0;
             font-size: 2.2em;
             letter-spacing: 1px;
         }
         h2 {
-            color: #8fa3c2;
+            color: #666;
             font-weight: normal;
             font-size: 1.2em;
             margin: 5px 0 25px;
@@ -92,12 +95,13 @@
             line-height: 1.7;
             margin-bottom: 25px;
             font-size: 1.05em;
+            color: #555;
         }
         p.instruction {
             font-style: italic;
             font-size: 0.9em;
             margin-bottom: 40px;
-            color: #a8b8d0;
+            color: #888;
         }
         /* Social Media Section */
         .social-links {
@@ -108,10 +112,10 @@
             font-size: 0.85em;
             letter-spacing: 2px;
             margin-bottom: 15px;
-            color: #8fa3c2;
+            color: #666;
         }
         .social-icons a {
-            color: #6b84b5;
+            color: #bfa562; /* Gold */
             font-size: 2.2em;
             margin: 0 12px;
             text-decoration: none;
@@ -119,7 +123,7 @@
             display: inline-block;
         }
         .social-icons a:hover {
-            color: #4a6799;
+            color: #2c3e50; /* Charcoal hover */
             transform: scale(1.1);
         }
     </style>
@@ -128,8 +132,8 @@
 
 <div class="portfolio-container">
     
-    <!-- Sidebar Tabs -->
-    <div class="sidebar">
+    <!-- Top Navigation Tabs -->
+    <div class="navbar">
         <a href="#home" class="tab active">Home</a>
         <a href="#about" class="tab">About</a>
         <a href="#projects" class="tab">Projects</a>
@@ -146,7 +150,7 @@
         
         <p class="bio">I'm a passionate Computer Engineering student at Georgia Tech with knowledge and interest in embedded systems and software engineering.</p>
         
-        <p class="instruction">This website showcases my experience and projects. Click the tabs on the left to access links to my about page, projects, and resume.</p>
+        <p class="instruction">This website showcases my experience and projects. Click the tabs on the top navigation to access links to my about page, projects, and resume.</p>
         
         <div class="social-links">
             <div class="social-title">Social media links</div>
