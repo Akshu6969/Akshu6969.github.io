@@ -4,177 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashrai Gandikota | ePortfolio</title>
+    <!-- Imports standard icons for the social media buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #b3a369; /* Tech Gold */
-            --secondary-color: #003057; /* Navy Blue */
-            --bg-color: #f4f4f9;
-            --text-color: #333;
-        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-        }
-        nav {
-            background-color: #222;
-            color: white;
+            background-color: #f0f4f8; /* Light blue-grey background */
+            font-family: 'Century Gothic', 'Segoe UI', sans-serif;
             display: flex;
             justify-content: center;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #8fa3c2; 
         }
-        nav a {
+        .portfolio-container {
+            display: flex;
+            width: 85%;
+            max-width: 1100px;
+            height: 85vh;
+            align-items: flex-start;
+        }
+        /* Left Sidebar Navigation */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+        .tab {
+            background-color: #b3c6e6; 
             color: white;
+            padding: 25px 12px;
+            margin-bottom: 5px;
+            border-radius: 8px 0 0 8px;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg); /* Rotates the text to match the screenshot */
+            text-align: center;
+            font-size: 15px;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+            cursor: pointer;
         }
-        nav a:hover {
-            color: var(--primary-color);
+        .tab.active {
+            background-color: white;
+            color: #7a93bd;
         }
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 20px;
+        .tab:hover:not(.active) {
+            background-color: #9ab0d6;
         }
-        section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        /* Main Content Box */
+        .main-content {
+            background-color: white;
+            flex-grow: 1;
+            height: 100%;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 8px 8px 8px;
+        }
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; /* Makes the image a perfect circle */
+            object-fit: cover;
+            margin-bottom: 25px;
+        }
+        h1 {
+            color: #6b84b5; 
+            font-weight: normal;
+            margin: 10px 0;
+            font-size: 2.2em;
+            letter-spacing: 1px;
         }
         h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
+            color: #8fa3c2;
+            font-weight: normal;
+            font-size: 1.2em;
+            margin: 5px 0 25px;
+            letter-spacing: 2px;
         }
-        .project-card {
-            background: var(--bg-color);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--primary-color);
-            border-radius: 4px;
+        p.bio {
+            max-width: 700px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.05em;
         }
-        .project-card h3 {
-            margin-top: 0;
-            color: var(--secondary-color);
+        p.instruction {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 40px;
+            color: #a8b8d0;
         }
-        .btn {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.5rem 1rem;
+        /* Social Media Section */
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-title {
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #8fa3c2;
+        }
+        .social-icons a {
+            color: #6b84b5;
+            font-size: 2.2em;
+            margin: 0 12px;
             text-decoration: none;
-            border-radius: 4px;
-            margin-top: 1rem;
+            transition: color 0.3s, transform 0.2s;
+            display: inline-block;
         }
-        .btn:hover {
-            background: var(--primary-color);
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--secondary-color);
-            color: white;
-            margin-top: 2rem;
+        .social-icons a:hover {
+            color: #4a6799;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Ashrai Gandikota</h1>
-    <p>Computer Engineering Student | Georgia Tech</p>
-</header>
-
-<nav>
-    <a href="#about">About Me & Goals</a>
-    <a href="#resume">Resume</a>
-    <a href="#projects">Technical Projects</a>
-</nav>
-
-<div class="container">
+<div class="portfolio-container">
     
-    <!-- About & Career Goals Section -->
-    <section id="about">
-        <h2>About Me & Career Goals</h2>
-        <p><strong>Welcome!</strong> I am a Computer Engineering student with a deep interest in both embedded systems and software engineering. My development experience spans from building responsive front-end architectures on a MacBook Pro to debugging low-level hardware integrations.</p>
+    <!-- Sidebar Tabs -->
+    <div class="sidebar">
+        <a href="#home" class="tab active">Home</a>
+        <a href="#about" class="tab">About</a>
+        <a href="#projects" class="tab">Projects</a>
+        <a href="#resume" class="tab">Resume</a>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <!-- Add your photo file path to the src attribute below -->
+        <img src="your-photo.jpg" alt="Ashrai Gandikota" class="profile-img">
         
-        <p>My long-term career aspirations are focused on bridging the gap between intricate hardware mechanics and scalable software solutions. Whether I am writing assembly code, designing circuits, or deploying full-stack web applications, I am driven by the challenge of optimizing systems from the ground up.</p>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume">
-        <h2>Resume Highlights</h2>
-        <p><em>Professional Experience</em></p>
-        <ul>
-            <li><strong>Software Optimization & Migration | Baazar (June 2025 – August 2025)</strong><br>
-            Spearheaded a remote platform migration for an e-commerce platform. Developed scalable React components and engineered robust Shopify API integrations to optimize the digital storefront.</li>
-        </ul>
-        <p><em>A comprehensive, downloadable PDF version of my resume detailing my full academic and professional history is available upon request.</em></p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Technical Projects</h2>
-        <p>Below is a curated portfolio of my technical work, highlighting my Discovery Project and various academic engineering endeavors.</p>
-
-        <!-- Discovery Project -->
-        <div class="project-card">
-            <h3>Discovery Project: Slay the Spire 2 "Chaos Mods" Expansion</h3>
-            <p><strong>Overview:</strong> A formal academic discovery project focused on non-physical software modifications and card mechanics. This project utilizes C# and HarmonyLib to patch and alter core map logic.</p>
-            <p><strong>Technical Implementation:</strong> The mod specifically targets the game's structural variables, executing code to replace <code>MapPointType.Shop</code> with customized logic while ensuring the remaining map points are preserved. It accurately targets <code>MapPointType.Unknown</code> events to inject the new chaotic mechanics.</p>
-            <p><em>[Insert Images/Visuals of Mod Gameplay or Code Structure Here to meet the 5-image portfolio requirement]</em></p>
+        <h1>Ashrai Gandikota</h1>
+        <h2>Hello!</h2>
+        
+        <p class="bio">I'm a passionate Computer Engineering student at Georgia Tech with knowledge and interest in embedded systems and software engineering.</p>
+        
+        <p class="instruction">This website showcases my experience and projects. Click the tabs on the left to access links to my about page, projects, and resume.</p>
+        
+        <div class="social-links">
+            <div class="social-title">Social media links</div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
         </div>
-
-        <!-- Additional Project 1 -->
-        <div class="project-card">
-            <h3>Buzz Board</h3>
-            <p><strong>Overview:</strong> A collaborative campus event tracking website developed in conjunction with the Georgia Tech Web Dev student organization. The platform integrates campus maps and provides comprehensive event creation tools designed specifically for student groups.</p>
-        </div>
-
-        <!-- Additional Project 2 -->
-        <div class="project-card">
-            <h3>Microcontrolled Video Game Integration</h3>
-            <p><strong>Overview:</strong> Designed and programmed a custom hardware-oriented video game utilizing a microcontroller. The project involved writing script routines for game inputs, managing animated sprites, developing collision rules, and engineering weapon mechanics, heavily relying on rigorous debugging of runtime logic errors.</p>
-        </div>
-
-        <!-- Additional Project 3 -->
-        <div class="project-card">
-            <h3>RISC-V In-Place Pathfinding</h3>
-            <p><strong>Overview:</strong> Developed an efficient, in-place pathfinding program utilizing a dynamic programming algorithm. The entire logic structure was written natively in RISC-V assembly language, requiring meticulous memory management and instruction optimization.</p>
-        </div>
-    </section>
+    </div>
 
 </div>
-
-<footer>
-    <p>&copy; 2026 Ashrai Gandikota. All Rights Reserved.</p>
-</footer>
 
 </body>
 </html>
