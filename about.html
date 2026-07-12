@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Ashrai Gandikota</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles from Previous Design */
+        body {
+            background-color: #eef2f6; 
+            font-family: 'Inter', 'Century Gothic', 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #4a5568; 
+        }
+        .portfolio-container {
+            display: flex;
+            width: 85%;
+            max-width: 1000px;
+            height: 85vh;
+            align-items: flex-start;
+            flex-direction: row; 
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            z-index: 1;
+        }
+        .tab {
+            background-color: #cbd5e1; 
+            color: #64748b;
+            padding: 25px 14px;
+            margin-bottom: 6px;
+            border-radius: 0 10px 10px 0; 
+            text-decoration: none;
+            writing-mode: vertical-rl; 
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: inset 2px 0 5px rgba(0,0,0,0.02);
+        }
+        .tab.active {
+            background-color: white;
+            color: #3b82f6; 
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+        }
+        .tab:hover:not(.active) {
+            background-color: #94a3b8;
+            color: white;
+        }
+
+        /* Main Content Box - Adjusted for About Page */
+        .main-content {
+            background-color: white;
+            flex-grow: 1;
+            height: 100%;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px 0 0 12px; 
+            position: relative;
+            z-index: 2;
+            overflow-y: auto; /* Allows scrolling if content is long */
+            box-sizing: border-box;
+        }
+
+        /* Typography & Layout inside About Page */
+        h1 {
+            color: #1e293b; 
+            font-weight: 600;
+            margin: 0 0 10px;
+            font-size: 2.2em;
+            letter-spacing: 0.5px;
+        }
+        .divider {
+            height: 3px;
+            width: 60px;
+            background-color: #3b82f6;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #3b82f6;
+            font-weight: 500;
+            font-size: 1.2em;
+            margin: 30px 0 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        p {
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        /* Skills Grid Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .skill-category h3 {
+            color: #1e293b;
+            font-size: 1em;
+            margin: 0 0 5px 0;
+        }
+        .skill-category p {
+            font-size: 0.95em;
+            margin: 0;
+            color: #64748b;
+        }
+
+        /* Experience Blocks */
+        .experience-block {
+            border-left: 3px solid #cbd5e1;
+            padding-left: 20px;
+            margin-bottom: 25px;
+            transition: border-color 0.3s;
+        }
+        .experience-block:hover {
+            border-left-color: #3b82f6;
+        }
+        .experience-block h3 {
+            margin: 0 0 5px;
+            color: #1e293b;
+            font-size: 1.1em;
+        }
+        .experience-block .meta {
+            font-size: 0.9em;
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Scrollbar Styling for a clean look */
+        .main-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="portfolio-container">
+    
+    <!-- Main Content Area (About Page) -->
+    <div class="main-content">
+        
+        <h1>About</h1>
+        <div class="divider"></div>
+        
+        <!-- Education Section -->
+        <h2>Education</h2>
+        <p>Currently, I am studying <strong>Computer Engineering</strong> at the <strong>Georgia Institute of Technology</strong>. My academic coursework and projects heavily focus on low-level computer engineering concepts, hardware integration, and software development.</p>
+        
+        <!-- Skills Section -->
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming</h3>
+                <p>C, C#, RISC-V Assembly, MATLAB</p>
+            </div>
+            <div class="skill-category">
+                <h3>Hardware & Embedded</h3>
+                <p>ESP32 Microcontrollers, NI myDAQ, Circuit Analysis</p>
+            </div>
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <p>React, Shopify API, HTML, CSS</p>
+            </div>
+            <div class="skill-category">
+                <h3>Software & Tools</h3>
+                <p>HarmonyLib, Git</p>
+            </div>
+        </div>
+
+        <!-- Experience & Activities Section -->
+        <h2>Experience and Activities</h2>
+        
+        <div class="experience-block">
+            <h3>Software Optimization & Migration</h3>
+            <div class="meta">Baazar | June 2025 – August 2025</div>
+            <p>Executed a remote platform migration for an e-commerce platform. Engineered robust Shopify API integrations and developed highly scalable React components to optimize the digital storefront.</p>
+        </div>
+
+        <div class="experience-block">
+            <h3>Georgia Tech Web Dev Organization</h3>
+            <div class="meta">Campus Collaborative Project</div>
+            <p>Collaborated with a student organization team to develop <strong>Buzz Board</strong>, a campus event tracking website. Integrated campus maps and built comprehensive event creation tools designed specifically for student groups.</p>
+        </div>
+
+    </div>
+
+    <!-- Right Sidebar Tabs (Notice 'About' is now active) -->
+    <div class="sidebar">
+        <a href="index.html" class="tab">Home</a>
+        <a href="about.html" class="tab active">About</a>
+        <a href="projects.html" class="tab">Projects</a>
+        <a href="resume.html" class="tab">Resume</a>
+    </div>
+
+</div>
+
+</body>
+</html>
