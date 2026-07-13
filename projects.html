@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Ashrai Gandikota</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            background-color: #eef2f6; 
+            font-family: 'Inter', 'Century Gothic', 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #4a5568; 
+        }
+        .portfolio-container {
+            display: flex;
+            width: 85%;
+            max-width: 1000px;
+            height: 85vh;
+            align-items: flex-start;
+            flex-direction: row; 
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            z-index: 1;
+        }
+        .tab {
+            background-color: #cbd5e1; 
+            color: #64748b;
+            padding: 25px 14px;
+            margin-bottom: 6px;
+            border-radius: 0 10px 10px 0; 
+            text-decoration: none;
+            writing-mode: vertical-rl; 
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: inset 2px 0 5px rgba(0,0,0,0.02);
+        }
+        .tab.active {
+            background-color: white;
+            color: #3b82f6; 
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+        }
+        .tab:hover:not(.active) {
+            background-color: #94a3b8;
+            color: white;
+        }
+
+        /* Main Content Box */
+        .main-content {
+            background-color: white;
+            flex-grow: 1;
+            height: 100%;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px 0 0 12px; 
+            position: relative;
+            z-index: 2;
+            overflow-y: auto; 
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1 {
+            color: #1e293b; 
+            font-weight: 600;
+            margin: 0 0 10px;
+            font-size: 2.2em;
+            letter-spacing: 0.5px;
+        }
+        .divider {
+            height: 3px;
+            width: 60px;
+            background-color: #3b82f6;
+            margin-bottom: 40px;
+        }
+        
+        /* Project Layouts matching Screenshots */
+        .project-section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .project-section:last-child {
+            border-bottom: none;
+        }
+        .project-title {
+            color: #3b82f6;
+            font-size: 1.6em;
+            font-weight: 500;
+            text-align: center;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+        .project-subtitle {
+            color: #1e293b;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-align: center;
+            margin: 0 0 25px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .project-description {
+            line-height: 1.8;
+            font-size: 1.05em;
+            color: #475569;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        /* Media Containers */
+        .media-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .media-img {
+            max-width: 45%;
+            height: auto;
+            border: 1px solid #cbd5e1;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .tech-stack {
+            font-size: 0.85em;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Scrollbar Styling */
+        .main-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="portfolio-container">
+    
+    <div class="main-content">
+        
+        <h1>Projects</h1>
+        <div class="divider"></div>
+
+        <div class="project-section">
+            <h2 class="project-title">Microcontrolled Video Game Integration</h2>
+            <h3 class="project-subtitle">ECE 2035 Final Project</h3>
+            
+            <p class="project-description">For my final project in Programming for HW/SW systems, I developed a custom, hardware-oriented video game utilizing an ESP32 microcontroller and physical inputs. The project involved writing complex C script routines to handle physical game inputs and translate them into on-screen actions on an external display. The core logic required managing animated sprites, developing strict collision rules, and engineering real-time weapon mechanics. Ensuring the game loop ran efficiently without frame drops necessitated extensive debugging of runtime application crashes and logic errors.</p>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+            <div class="tech-stack">Built using: ESP32 Microcontroller, C, external display, physical pushbuttons.</div>
+        </div>
+        
+        <div class="project-section">
+            <h2 class="project-title">Slay the Spire 2 "Chaos Mods"</h2>
+            <h3 class="project-subtitle">ECE 1100 Individual Discovery Project</h3>
+            
+            <p class="project-description">For my ECE Discovery Studio course, I embarked on an Individual Discovery Project focused on non-physical software modifications and card mechanics. I conceptualized and programmed a custom expansion for the game Slay the Spire 2. Utilizing C# and the HarmonyLib patching library, I engineered a mod that intercepts and alters structural variables at runtime. Specifically, the script targets and replaces <code>MapPointType.Shop</code> with customized chaotic logic, while rigorously ensuring that all other standard map points are preserved. The integration successfully targets <code>MapPointType.Unknown</code> events to inject new mechanics without disrupting the game's underlying stability.</p>
+            
+            <div class="media-row">
+                <img src="mod-screenshot.jpg" alt="Mod Gameplay Screenshot" class="media-img">
+                <img src="mod-code.jpg" alt="C# Code Snippet" class="media-img">
+            </div>
+            <div class="tech-stack">Built using: C#, HarmonyLib, Visual Studio.</div>
+        </div>
+
+        <div class="project-section">
+            <h2 class="project-title">Buzz Board Campus Portal</h2>
+            <h3 class="project-subtitle">Georgia Tech Web Dev Collaborative</h3>
+            
+            <p class="project-description">Developed in collaboration with the Georgia Tech Web Dev student organization, Buzz Board is a comprehensive campus event tracking platform. I assisted in architecting a scalable front-end system that displays interactive campus maps alongside robust event creation tools, providing student groups with a centralized portal to manage and broadcast their activities.</p>
+            
+            <div class="media-row">
+                <img src="buzzboard-full.jpg" alt="Buzz Board Interface" class="media-img" style="max-width: 80%;">
+            </div>
+            <div class="tech-stack">Built using: React, Node.js, HTML/CSS.</div>
+        </div>
+
+    </div>
+
+    <div class="sidebar">
+        <a href="index.html" class="tab">Home</a>
+        <a href="about.html" class="tab">About</a>
+        <a href="projects.html" class="tab active">Projects</a>
+        <a href="resume.html" class="tab">Resume</a>
+    </div>
+
+</div>
+
+</body>
+</html>
