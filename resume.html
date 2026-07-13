@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume & Goals | Ashrai Gandikota</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            background-color: #eef2f6; 
+            font-family: 'Inter', 'Century Gothic', 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #4a5568; 
+        }
+        .portfolio-container {
+            display: flex;
+            width: 85%;
+            max-width: 1000px;
+            height: 85vh;
+            align-items: flex-start;
+            flex-direction: row; 
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            z-index: 1;
+        }
+        .tab {
+            background-color: #cbd5e1; 
+            color: #64748b;
+            padding: 25px 14px;
+            margin-bottom: 6px;
+            border-radius: 0 10px 10px 0; 
+            text-decoration: none;
+            writing-mode: vertical-rl; 
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: inset 2px 0 5px rgba(0,0,0,0.02);
+        }
+        .tab.active {
+            background-color: white;
+            color: #3b82f6; 
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+        }
+        .tab:hover:not(.active) {
+            background-color: #94a3b8;
+            color: white;
+        }
+
+        /* Main Content Box */
+        .main-content {
+            background-color: white;
+            flex-grow: 1;
+            height: 100%;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px 0 0 12px; 
+            position: relative;
+            z-index: 2;
+            overflow-y: auto; 
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1 {
+            color: #1e293b; 
+            font-weight: 600;
+            margin: 0 0 10px;
+            font-size: 2.2em;
+            letter-spacing: 0.5px;
+        }
+        .divider {
+            height: 3px;
+            width: 60px;
+            background-color: #3b82f6;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #3b82f6;
+            font-weight: 500;
+            font-size: 1.4em;
+            margin: 0 0 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        /* Career Goals Section */
+        .goals-container {
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+        .goals-container p {
+            line-height: 1.7;
+            font-size: 1.05em;
+            color: #475569;
+            margin-top: 0;
+        }
+        .goals-list {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        .goals-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        /* Resume Section Formatting */
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .btn-download {
+            background-color: #3b82f6;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+        .btn-download:hover {
+            background-color: #2563eb;
+        }
+        
+        .resume-item {
+            margin-bottom: 25px;
+        }
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .resume-item-title {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 1.1em;
+            margin: 0;
+        }
+        .resume-item-subtitle {
+            font-style: italic;
+            color: #64748b;
+            font-size: 0.95em;
+        }
+        .resume-item-date {
+            color: #3b82f6;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        .resume-bullets {
+            margin-top: 10px;
+            padding-left: 20px;
+            color: #475569;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Skills Grid in Resume */
+        .resume-skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 0.95em;
+            color: #475569;
+        }
+
+        /* Scrollbar Styling */
+        .main-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="portfolio-container">
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+        
+        <h1>Career Roadmap & Resume</h1>
+        <div class="divider"></div>
+
+        <!-- CAREER GOALS SECTION -->
+        <div class="goals-container">
+            <h2>Career Goals</h2>
+            <p><strong>Long-Term Aspiration:</strong> My ultimate goal is to become a Systems Architect, bridging the critical gap between intricate hardware architecture and scalable software solutions. I want to lead cross-functional engineering teams in developing deeply integrated systems, such as advanced embedded electronics, IoT infrastructures, or consumer hardware products.</p>
+            <p><strong>Steps to Achieve This:</strong></p>
+            <ul class="goals-list">
+                <li><strong>Short-Term (1-2 Years):</strong> Secure software engineering or embedded systems internships to gain hands-on industry experience. Continue expanding my project portfolio with complex full-stack applications and hardware integration labs.</li>
+                <li><strong>Mid-Term (3-5 Years):</strong> Complete my Computer Engineering degree at Georgia Tech, specializing in systems architecture and distributed software. Transition into a full-time role as an Embedded Software Engineer or Backend Developer to master production-level code and debugging methodologies.</li>
+                <li><strong>Long-Term (5+ Years):</strong> Leverage my comprehensive understanding of both low-level hardware constraints and high-level software scalability to transition into architectural leadership, guiding the technical direction of integrated product development.</li>
+            </ul>
+        </div>
+
+        <!-- RESUME SECTION -->
+        <div class="resume-header">
+            <h2>Curriculum Vitae</h2>
+            <!-- Update the href below to point to your actual PDF resume file -->
+            <a href="Ashrai_Gandikota_Resume.pdf" class="btn-download" target="_blank">
+                <i class="fas fa-file-download"></i> Download PDF
+            </a>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-item">
+            <div class="resume-item-header">
+                <h3 class="resume-item-title">Georgia Institute of Technology</h3>
+                <span class="resume-item-date">Expected Graduation: [Insert Year]</span>
+            </div>
+            <div class="resume-item-subtitle">Bachelor of Science in Computer Engineering</div>
+        </div>
+
+        <!-- Experience -->
+        <div class="resume-item">
+            <div class="resume-item-header">
+                <h3 class="resume-item-title">Software Optimization & Migration Developer</h3>
+                <span class="resume-item-date">June 2025 – August 2025</span>
+            </div>
+            <div class="resume-item-subtitle">Baazar</div>
+            <ul class="resume-bullets">
+                <li>Spearheaded a remote platform migration for an e-commerce platform to improve performance and scalability.</li>
+                <li>Developed scalable React components and engineered robust Shopify API integrations to optimize the digital storefront.</li>
+            </ul>
+        </div>
+
+        <div class="resume-item">
+            <div class="resume-item-header">
+                <h3 class="resume-item-title">Front-End Web Developer</h3>
+                <span class="resume-item-date">Academic Year 2025 - 2026</span>
+            </div>
+            <div class="resume-item-subtitle">Georgia Tech Web Dev Organization (Buzz Board)</div>
+            <ul class="resume-bullets">
+                <li>Collaborated with a student engineering team to develop a centralized internship and career-finding portal.</li>
+                <li>Architected scalable front-end systems integrating real-time job postings and application tracking tools for students.</li>
+            </ul>
+        </div>
+
+        <!-- Select Projects -->
+        <div class="resume-item">
+            <div class="resume-item-header">
+                <h3 class="resume-item-title">Embedded Systems Engineer (ECE 2035)</h3>
+            </div>
+            <div class="resume-item-subtitle">Microcontrolled Video Game Integration</div>
+            <ul class="resume-bullets">
+                <li>Programmed a hardware-oriented video game utilizing an ESP32 microcontroller in C.</li>
+                <li>Engineered script routines for physical game inputs, animated sprite rendering, and strict collision rules on an external display.</li>
+            </ul>
+        </div>
+
+        <div class="resume-item">
+            <div class="resume-item-header">
+                <h3 class="resume-item-title">Software Mod Developer (ECE 1100)</h3>
+            </div>
+            <div class="resume-item-subtitle">Slay the Spire 2 "Chaos Mods" Expansion</div>
+            <ul class="resume-bullets">
+                <li>Designed a custom C# expansion utilizing HarmonyLib to intercept and alter compiled game map logic at runtime.</li>
+                <li>Successfully targeted and replaced structural map variables without breaking the game's underlying stability loop.</li>
+            </ul>
+        </div>
+
+        <!-- Skills -->
+        <div class="resume-item">
+            <div class="resume-item-header">
+                <h3 class="resume-item-title">Technical Skills</h3>
+            </div>
+            <div class="resume-skills" style="margin-top: 10px;">
+                <div><strong>Languages:</strong> C, C#, Python, JavaScript, SQL, RISC-V Assembly, MATLAB</div>
+                <div><strong>Hardware:</strong> ESP32, NI myDAQ, Circuit Analysis</div>
+                <div><strong>Web:</strong> React, Node.js, Shopify API, HTML, CSS</div>
+                <div><strong>Tools:</strong> AWS, MySQL, Linux, VirtualBox, Git, HarmonyLib</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Right Sidebar Tabs -->
+    <div class="sidebar">
+        <a href="index.html" class="tab">Home</a>
+        <a href="about.html" class="tab">About</a>
+        <a href="projects.html" class="tab">Projects</a>
+        <a href="resume.html" class="tab active">Resume</a>
+    </div>
+
+</div>
+
+</body>
+</html>
