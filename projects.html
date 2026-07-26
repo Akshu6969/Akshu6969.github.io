@@ -164,6 +164,26 @@
             margin-top: 15px;
             font-style: italic;
         }
+        
+        /* Rubric Headers & Lists */
+        .rubric-header {
+            color: #1e293b; 
+            margin-bottom: 10px; 
+            font-size: 1.2em;
+            border-left: 3px solid #3b82f6;
+            padding-left: 10px;
+            margin-top: 25px;
+        }
+        .timeline-list {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #475569;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        .timeline-list li {
+            margin-bottom: 8px;
+        }
 
         /* Scrollbar Styling */
         .main-content::-webkit-scrollbar {
@@ -202,14 +222,25 @@
             <h2 class="project-title">Slay the Spire 2 "Chaos Mods"</h2>
             <h3 class="project-subtitle">ECE 1100 Individual Discovery Project</h3>
             
-            <h4 style="color: #1e293b; margin-bottom: 10px; font-size: 1.2em;">The Idea</h4>
-            <p class="project-description" style="margin-bottom: 15px;">My starting pitch for this project was to explore non-physical software modifications by conceptualizing and programming a custom expansion for the game Slay the Spire 2. The core challenge was figuring out how to manipulate the game's compiled codebase at runtime to inject custom "chaos" mechanics into the map generation sequence without disrupting the game's underlying stability.</p>
+            <h4 class="rubric-header">Discovery Project Idea</h4>
+            <p class="project-description" style="margin-bottom: 15px;">My starting pitch for this project was to explore non-physical software architecture by conceptualizing and programming a custom expansion for the game <em>Slay the Spire 2</em>. Originally, the idea was to introduce a row or two of "calamity squares" per act, alongside "corrupted strikes" that would periodically change their energy cost dynamically. The overarching goal was to manipulate the game's core logic at runtime to inject these chaotic elements without breaking the underlying stability of the game.</p>
             
-            <h4 style="color: #1e293b; margin-bottom: 10px; font-size: 1.2em;">The Process</h4>
-            <p class="project-description" style="margin-bottom: 15px;">I utilized C# and the HarmonyLib patching library to intercept and alter structural variables dynamically. Progress involved reverse-engineering the map generation loop and writing scripts to safely replace specific node assignments. A major roadblock early on was causing full game crashes by inadvertently overwriting critical map paths. After refining the logic and troubleshooting the runtime errors, I successfully targeted <code>MapPointType.Shop</code> and <code>MapPointType.Unknown</code> to inject the chaotic logic while rigorously preserving all standard map points.</p>
+            <h4 class="rubric-header">Project Progress</h4>
+            <p class="project-description" style="margin-bottom: 10px;">I utilized C# and the HarmonyLib patching library to intercept and alter structural variables dynamically. As the semester progressed, the scope and design of the mod evolved significantly:</p>
+            <ul class="timeline-list">
+                <li><strong>Phase 1 (Research & Setup):</strong> Reverse-engineered the game's repository to understand the map generation sequence and configured my local C# development environment.</li>
+                <li><strong>Phase 2 (Pivot & Expansion):</strong> The project evolved from injecting isolated calamity squares to a broader concept: making <em>all</em> map squares "Unknown." I built custom RNG logic to handle spawning encounters, elites, and bosses behind these unknown nodes, and pivoted to simply adding the new custom cards and relics directly into the general card pool.</li>
+                <li><strong>Phase 3 (Refinement):</strong> Safely targeted and replaced specific node generation variables (<code>MapPointType.Shop</code> and <code>MapPointType.Unknown</code>) with the custom RNG chaotic logic, ensuring the patching library triggered correctly while preserving overall game stability.</li>
+            </ul>
             
-            <h4 style="color: #1e293b; margin-bottom: 10px; font-size: 1.2em;">The Outcome</h4>
-            <p class="project-description">The final mod successfully generates chaotic map layouts without crashing the host application. Through this project, I gained critical ECE skills in reverse engineering, runtime memory manipulation, and rigorous debugging methodologies. This hands-on experience solidified my interest in systems architecture and robust software design. Moving forward, I plan to expand this mod by developing custom cards and relics that interact specifically with these new chaos nodes.</p>
+            <h4 class="rubric-header">Project Successes and Failures</h4>
+            <p class="project-description" style="margin-bottom: 15px;">A major roadblock early on was struggling to learn and integrate the Baseline framework; it was not very well-documented and lacked comprehensive guides, making initial setup highly trial-and-error. This initial learning curve often led to full application crashes by inadvertently overwriting critical map paths. A major success came when I finally figured out how to safely target specific events and properly build the custom RNG to inject the chaotic logic. Getting the game to launch, generate a fully interactive chaotic map, and run the encounters smoothly without crashing the host application was a massive win.</p>
+            
+            <h4 class="rubric-header">ECE Skills Gained</h4>
+            <p class="project-description" style="margin-bottom: 15px;">Through this project, I gained critical hands-on ECE skills in reverse engineering and reading compiled code. I drastically improved my proficiency in C# and learned how to use dynamic patching tools (HarmonyLib) for runtime memory manipulation. Additionally, I developed rigorous debugging methodologies to trace logic errors without corrupting the host system.</p>
+
+            <h4 class="rubric-header">Final Thoughts</h4>
+            <p class="project-description" style="margin-bottom: 15px;">Overall, this was an incredibly rewarding experience that solidified my interest in the software and systems architecture threads of Computer Engineering. Taking a compiled system, understanding it under the hood, and successfully altering its behavior gave me a great perspective on robust software design. Moving forward, I would love to continue this project by expanding the custom cards and relics and refining how they interact directly with these new RNG map nodes.</p>
 
             <div class="video-container" style="margin-bottom: 20px;">
                 <iframe src="https://drive.google.com/file/d/1mG3i-jByUrKH9tlT8Q3ncRcLlLI6w9Zc/preview" allowfullscreen title="Discovery Project Presentation"></iframe>
@@ -242,7 +273,7 @@
         <a href="index.html" class="tab">Home</a>
         <a href="about.html" class="tab">About</a>
         <a href="projects.html" class="tab active">Projects</a>
-        <a href="goals.html" class="tab">Career Goals</a>
+        <a href="goals.html" class="tab">Career<br>Goals</a>
         <a href="resume.html" class="tab">Resume</a>
     </div>
 
