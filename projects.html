@@ -165,7 +165,7 @@
             font-style: italic;
         }
         
-        /* Rubric Headers & Lists */
+        /* Rubric Headers */
         .rubric-header {
             color: #1e293b; 
             margin-bottom: 10px; 
@@ -174,15 +174,44 @@
             padding-left: 10px;
             margin-top: 25px;
         }
-        .timeline-list {
-            padding-left: 20px;
-            margin-bottom: 20px;
-            color: #475569;
-            line-height: 1.7;
-            font-size: 1.05em;
+
+        /* CSS Timeline Widget */
+        .timeline-widget {
+            border-left: 3px solid #cbd5e1;
+            margin: 20px 0 30px 15px; 
+            padding-left: 30px;
+            position: relative;
         }
-        .timeline-list li {
-            margin-bottom: 8px;
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px; 
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        .timeline-item h5 {
+            color: #1e293b;
+            font-size: 1.1em;
+            margin: 0 0 5px 0;
+        }
+        .timeline-item p {
+            color: #475569;
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin: 0;
+            text-align: justify;
         }
 
         /* Scrollbar Styling */
@@ -223,18 +252,33 @@
             <h3 class="project-subtitle">ECE 1100 Individual Discovery Project</h3>
             
             <h4 class="rubric-header">Discovery Project Idea</h4>
-            <p class="project-description" style="margin-bottom: 15px;">My starting pitch for this project was to explore non-physical software architecture by conceptualizing and programming a custom expansion for the game <em>Slay the Spire 2</em>. Originally, the idea was to introduce a row or two of "calamity squares" per act, alongside "corrupted strikes" that would periodically change their energy cost dynamically. The overarching goal was to manipulate the game's core logic at runtime to inject these chaotic elements without breaking the underlying stability of the game.</p>
+            <p class="project-description" style="margin-bottom: 15px;">My starting pitch for this project was to explore non-physical software architecture by conceptualizing and programming a custom expansion for the game <em>Slay the Spire 2</em>. Originally, as detailed in my DiscoveryProject_PitchTemplate_ECE1100.docx.pdf, the idea was to introduce a row or two of "calamity squares" per act, alongside "corrupted strikes" that would periodically change their energy cost dynamically[cite: 1]. The overarching goal was to manipulate the game's core logic at runtime to inject these chaotic elements without breaking the underlying stability of the game.</p>
             
             <h4 class="rubric-header">Project Progress</h4>
-            <p class="project-description" style="margin-bottom: 10px;">I utilized C# and the HarmonyLib patching library to intercept and alter structural variables dynamically. As the semester progressed, the scope and design of the mod evolved significantly:</p>
-            <ul class="timeline-list">
-                <li><strong>Phase 1 (Research & Setup):</strong> Reverse-engineered the game's repository to understand the map generation sequence and configured my local C# development environment.</li>
-                <li><strong>Phase 2 (Pivot & Expansion):</strong> The project evolved from injecting isolated calamity squares to a broader concept: making <em>all</em> map squares "Unknown." I built custom RNG logic to handle spawning encounters, elites, and bosses behind these unknown nodes, and pivoted to simply adding the new custom cards and relics directly into the general card pool.</li>
-                <li><strong>Phase 3 (Refinement):</strong> Safely targeted and replaced specific node generation variables (<code>MapPointType.Shop</code> and <code>MapPointType.Unknown</code>) with the custom RNG chaotic logic, ensuring the patching library triggered correctly while preserving overall game stability.</li>
-            </ul>
+            <p class="project-description" style="margin-bottom: 10px;">I utilized C# and the HarmonyLib patching library to intercept and alter structural variables dynamically. As the semester progressed, the scope and design of the mod evolved significantly from my initial pitch:</p>
+            
+            <!-- Custom Timeline Widget -->
+            <div class="timeline-widget">
+                <div class="timeline-item">
+                    <h5>Weeks 1-3: Research & Setup</h5>
+                    <p>I began by setting up the C# modding environment and analyzing the codebase for map logic and item pools[cite: 1]. During this phase, I struggled heavily with the Baseline framework; it was poorly documented and lacked comprehensive guides, making the initial configuration a highly trial-and-error process.</p>
+                </div>
+                <div class="timeline-item">
+                    <h5>Weeks 4-6: Initial Development & Pivot</h5>
+                    <p>My original timeline mandated developing a patch to ensure the correct number of rows were modified per act[cite: 1]. However, the project evolved: instead of injecting isolated calamity squares, I pivoted to a broader concept of making <em>all</em> map squares "Unknown" by targeting node generation variables (<code>MapPointType.Shop</code> and <code>MapPointType.Unknown</code>).</p>
+                </div>
+                <div class="timeline-item">
+                    <h5>Weeks 7-9: Custom Mechanics & RNG</h5>
+                    <p>I initially planned to program randomized energy costs for Corrupted cards and new specific relic effects[cite: 1]. As the map logic evolved, I transitioned this step to building custom RNG logic that spawns encounters, elites, and bosses behind the unknown nodes, opting to add the new custom cards and relics directly into the general card pool rather than tying them to specific nodes.</p>
+                </div>
+                <div class="timeline-item">
+                    <h5>Weeks 10-12: Integration & Refinement</h5>
+                    <p>Integrated the custom mechanics into the modified node interaction logic, playtested for stability, and documented the project before the Showcase[cite: 1]. Ensuring the patching library triggered correctly without overwriting critical paths was key to preventing the host application from crashing.</p>
+                </div>
+            </div>
             
             <h4 class="rubric-header">Project Successes and Failures</h4>
-            <p class="project-description" style="margin-bottom: 15px;">A major roadblock early on was struggling to learn and integrate the Baseline framework; it was not very well-documented and lacked comprehensive guides, making initial setup highly trial-and-error. This initial learning curve often led to full application crashes by inadvertently overwriting critical map paths. A major success came when I finally figured out how to safely target specific events and properly build the custom RNG to inject the chaotic logic. Getting the game to launch, generate a fully interactive chaotic map, and run the encounters smoothly without crashing the host application was a massive win.</p>
+            <p class="project-description" style="margin-bottom: 15px;">A major roadblock early on was the steep learning curve associated with the Baseline framework, which often led to full application crashes by inadvertently overwriting critical map paths. A major success came when I finally figured out how to safely target specific events and properly build the custom RNG to inject the chaotic logic. Getting the game to launch, generate a fully interactive chaotic map, and run the encounters smoothly without crashing the host application was a massive win.</p>
             
             <h4 class="rubric-header">ECE Skills Gained</h4>
             <p class="project-description" style="margin-bottom: 15px;">Through this project, I gained critical hands-on ECE skills in reverse engineering and reading compiled code. I drastically improved my proficiency in C# and learned how to use dynamic patching tools (HarmonyLib) for runtime memory manipulation. Additionally, I developed rigorous debugging methodologies to trace logic errors without corrupting the host system.</p>
