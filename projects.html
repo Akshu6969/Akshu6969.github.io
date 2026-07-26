@@ -26,29 +26,30 @@
             flex-direction: row; 
         }
         
-        /* Sidebar Navigation */
+        /* Sidebar Navigation Tabs */
         .sidebar {
             display: flex;
             flex-direction: column;
-            margin-top: 50px;
+            margin-top: 40px;
             z-index: 1;
         }
         .tab {
             background-color: #cbd5e1; 
             color: #64748b;
-            padding: 25px 14px;
+            padding: 16px 12px;
             margin-bottom: 6px;
             border-radius: 0 10px 10px 0; 
             text-decoration: none;
             writing-mode: vertical-rl; 
             text-align: center;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s ease;
             cursor: pointer;
             box-shadow: inset 2px 0 5px rgba(0,0,0,0.02);
+            white-space: nowrap;
         }
         .tab.active {
             background-color: white;
@@ -183,6 +184,7 @@
         <h1>Projects</h1>
         <div class="divider"></div>
 
+        <!-- ECE 2035 PROJECT -->
         <div class="project-section">
             <h2 class="project-title">Microcontrolled Video Game Integration</h2>
             <h3 class="project-subtitle">ECE 2035 Final Project</h3>
@@ -190,44 +192,47 @@
             <p class="project-description">For my final project in Programming for HW/SW systems, I developed a custom, hardware-oriented video game utilizing an ESP32 microcontroller and physical inputs. The project involved writing complex C script routines to handle physical game inputs and translate them into on-screen actions on an external display. The core logic required managing animated sprites, developing strict collision rules, and engineering real-time weapon mechanics. Ensuring the game loop ran efficiently without frame drops necessitated extensive debugging of runtime application crashes and logic errors.</p>
             
             <div class="video-container">
-                <iframe src="https://drive.google.com/file/d/1kiEoMkYHslpB6QtBlTXbuIzxjX8FGj06/preview" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
             </div>
             <div class="tech-stack">Built using: ESP32 Microcontroller, C, external display, physical pushbuttons.</div>
         </div>
         
+        <!-- DISCOVERY PROJECT -->
         <div class="project-section">
             <h2 class="project-title">Slay the Spire 2 "Chaos Mods"</h2>
             <h3 class="project-subtitle">ECE 1100 Individual Discovery Project</h3>
             
-            <p class="project-description">For my ECE Discovery Studio course, I focused on modifiying game code and card mechanics. I conceptualized and programmed a custom expansion for the game Slay the Spire 2. Utilizing C# and the HarmonyLib patching library, I engineered a mod that intercepts and alters structural variables at runtime. Specifically, the script targets and replaces <code>MapPointType.Shop</code> with customized chaotic logic, while rigorously ensuring that all other standard map points are preserved. The integration successfully targets <code>MapPointType.Unknown</code> events to inject new mechanics without disrupting the game's underlying stability.</p>
+            <p class="project-description">For my ECE Discovery Studio course, I embarked on an Individual Discovery Project focused on non-physical software modifications and card mechanics. I conceptualized and programmed a custom expansion for the game Slay the Spire 2. Utilizing C# and the HarmonyLib patching library, I engineered a mod that intercepts and alters structural variables at runtime. Specifically, the script targets and replaces <code>MapPointType.Shop</code> with customized chaotic logic, while rigorously ensuring that all other standard map points are preserved. The integration successfully targets <code>MapPointType.Unknown</code> events to inject new mechanics without disrupting the game's underlying stability.</p>
             
             <div class="media-row">
                 <img src="mod-screenshot.jpg" alt="Mod Gameplay Screenshot" class="media-img">
-                <img src="codeSnapshot.jpg" alt="C# Code Snippet" class="media-img">
+                <img src="mod-code.jpg" alt="C# Code Snippet" class="media-img">
             </div>
-            <div class="tech-stack">Built using: C#, HarmonyLib, Rider.</div>
+            <div class="tech-stack">Built using: C#, HarmonyLib, Visual Studio.</div>
         </div>
 
+        <!-- BUZZ BOARD -->
         <div class="project-section">
-            <h2 class="project-title">Buzz Board Campus Portal</h2>
+            <h2 class="project-title">Buzz Board Internship Portal</h2>
             <h3 class="project-subtitle">Georgia Tech Web Dev Collaborative</h3>
             
             <p class="project-description">Developed in collaboration with the Georgia Tech Web Dev student organization, Buzz Board is a comprehensive internship and career-finding platform designed specifically for students. I assisted in architecting a scalable front-end system that integrates real-time job postings, detailed company profiles, and robust application tracking tools. This provides students with a centralized, interactive portal to seamlessly discover, filter, and apply for technical roles and co-ops.</p>
             
             <div class="media-row">
-                <img src="BuzzBoard.jpg" alt="Buzz Board Interface" class="media-img" style="max-width: 80%;">
+                <img src="buzzboard-full.jpg" alt="Buzz Board Internship Portal Interface" class="media-img" style="max-width: 80%;">
             </div>
             <div class="tech-stack">Built using: React, Node.js, HTML/CSS.</div>
         </div>
 
     </div>
 
+    <!-- Right Sidebar Tabs -->
     <div class="sidebar">
         <a href="index.html" class="tab">Home</a>
         <a href="about.html" class="tab">About</a>
         <a href="projects.html" class="tab active">Projects</a>
+        <a href="goals.html" class="tab">Career<br>Goals</a>
         <a href="resume.html" class="tab">Resume</a>
-        <a href="career-goals.html" class="tab">Career Goals</a>
     </div>
 
 </div>
