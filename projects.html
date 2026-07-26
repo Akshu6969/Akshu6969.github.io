@@ -202,7 +202,14 @@
             <h2 class="project-title">Slay the Spire 2 "Chaos Mods"</h2>
             <h3 class="project-subtitle">ECE 1100 Individual Discovery Project</h3>
             
-            <p class="project-description">For my ECE Discovery Studio course, I embarked on an Individual Discovery Project focused on non-physical software modifications and card mechanics. I conceptualized and programmed a custom expansion for the game Slay the Spire 2. Utilizing C# and the HarmonyLib patching library, I engineered a mod that intercepts and alters structural variables at runtime. Specifically, the script targets and replaces <code>MapPointType.Shop</code> with customized chaotic logic, while rigorously ensuring that all other standard map points are preserved. The integration successfully targets <code>MapPointType.Unknown</code> events to inject new mechanics without disrupting the game's underlying stability.</p>
+            <h4 style="color: #1e293b; margin-bottom: 10px; font-size: 1.2em;">The Problem</h4>
+            <p class="project-description" style="margin-bottom: 15px;">My starting pitch for this project was to explore non-physical software modifications by conceptualizing and programming a custom expansion for the game Slay the Spire 2. The core challenge was figuring out how to manipulate the game's compiled codebase at runtime to inject custom "chaos" mechanics into the map generation sequence without disrupting the game's underlying stability.</p>
+            
+            <h4 style="color: #1e293b; margin-bottom: 10px; font-size: 1.2em;">The Process</h4>
+            <p class="project-description" style="margin-bottom: 15px;">I utilized C# and the HarmonyLib patching library to intercept and alter structural variables dynamically. Progress involved reverse-engineering the map generation loop and writing scripts to safely replace specific node assignments. A major roadblock early on was causing full game crashes by inadvertently overwriting critical map paths. After refining the logic and troubleshooting the runtime errors, I successfully targeted <code>MapPointType.Shop</code> and <code>MapPointType.Unknown</code> to inject the chaotic logic while rigorously preserving all standard map points.</p>
+            
+            <h4 style="color: #1e293b; margin-bottom: 10px; font-size: 1.2em;">The Outcome</h4>
+            <p class="project-description">The final mod successfully generates chaotic map layouts without crashing the host application. Through this project, I gained critical ECE skills in reverse engineering, runtime memory manipulation, and rigorous debugging methodologies. This hands-on experience solidified my interest in systems architecture and robust software design. Moving forward, I plan to expand this mod by developing custom cards and relics that interact specifically with these new chaos nodes.</p>
 
             <div class="video-container" style="margin-bottom: 20px;">
                 <iframe src="https://drive.google.com/file/d/1mG3i-jByUrKH9tlT8Q3ncRcLlLI6w9Zc/preview" allowfullscreen title="Discovery Project Presentation"></iframe>
@@ -235,7 +242,7 @@
         <a href="index.html" class="tab">Home</a>
         <a href="about.html" class="tab">About</a>
         <a href="projects.html" class="tab active">Projects</a>
-        <a href="goals.html" class="tab">Career Goals</a>
+        <a href="goals.html" class="tab">Career<br>Goals</a>
         <a href="resume.html" class="tab">Resume</a>
     </div>
 
