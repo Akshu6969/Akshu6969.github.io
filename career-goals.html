@@ -4,37 +4,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Goals | Ashrai Gandikota</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            background-color: #eef2f6; 
+            font-family: 'Inter', 'Century Gothic', 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #4a5568; 
+        }
+        .portfolio-container {
+            display: flex;
+            width: 85%;
+            max-width: 1000px;
+            height: 85vh;
+            align-items: flex-start;
+            flex-direction: row; 
+        }
+        
+        /* Sidebar Navigation */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            z-index: 1;
+        }
+        .tab {
+            background-color: #cbd5e1; 
+            color: #64748b;
+            padding: 25px 14px;
+            margin-bottom: 6px;
+            border-radius: 0 10px 10px 0; 
+            text-decoration: none;
+            writing-mode: vertical-rl; 
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: inset 2px 0 5px rgba(0,0,0,0.02);
+        }
+        .tab.active {
+            background-color: white;
+            color: #3b82f6; 
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.05);
+        }
+        .tab:hover:not(.active) {
+            background-color: #94a3b8;
+            color: white;
+        }
+
+        /* Main Content Box */
+        .main-content {
+            background-color: white;
+            flex-grow: 1;
+            height: 100%;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px 0 0 12px; 
+            position: relative;
+            z-index: 2;
+            overflow-y: auto; 
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1 {
+            color: #1e293b; 
+            font-weight: 600;
+            margin: 0 0 10px;
+            font-size: 2.2em;
+            letter-spacing: 0.5px;
+        }
+        .divider {
+            height: 3px;
+            width: 60px;
+            background-color: #3b82f6;
+            margin-bottom: 40px;
+        }
+        
+        /* Vision Header */
+        .vision-statement {
+            font-size: 1.2em;
+            color: #1e293b;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .vision-statement strong {
+            color: #3b82f6;
+        }
+
+        /* Timeline / Roadmap Styling */
+        .roadmap {
+            position: relative;
+            padding-left: 30px;
+        }
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #cbd5e1;
+        }
+        .phase {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .phase:last-child {
+            margin-bottom: 0;
+        }
+        .phase::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        
+        .phase-timeframe {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: #3b82f6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .phase-title {
+            color: #1e293b;
+            font-size: 1.4em;
+            margin: 0 0 10px 0;
+        }
+        .phase-description {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 1.05em;
+            margin: 0;
+        }
+        .phase-bullets {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #475569;
+            line-height: 1.6;
+        }
+        .phase-bullets li {
+            margin-bottom: 8px;
+        }
+
+        /* Scrollbar Styling */
+        .main-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Insert your Navbar here -->
+<div class="portfolio-container">
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+        
+        <h1>Career Roadmap</h1>
+        <div class="divider"></div>
 
-    <main class="goals-container">
-        <header class="goals-header">
-            <h1>Career Goals & Vision</h1>
-            <p>Bridging the gap between low-level hardware architecture and scalable software platforms.</p>
-        </header>
+        <div class="vision-statement">
+            My ultimate professional aspiration is to become a <strong>Systems Architect</strong>, bridging the critical gap between intricate hardware design and highly scalable software solutions. As a Computer Engineering student, I am passionate about understanding systems from the silicon level all the way up to user-facing applications, enabling me to design products that are both technically optimized and deeply integrated.
+        </div>
 
-        <section class="goal-section">
-            <h2>Short-Term Objectives</h2>
-            <p>My immediate focus is on securing opportunities that allow me to dive deep into embedded systems, computer architecture, and low-level programming. I am actively looking for roles where I can leverage my experience with C, RISC-V assembly, and microcontrollers to write highly efficient, hardware-aware code. Simultaneously, I want to continue building impactful, user-facing tools and platforms that solve real-world logistical problems, streamlining processes from the backend to the user interface.</p>
-        </section>
+        <div class="roadmap">
+            
+            <!-- Short Term -->
+            <div class="phase">
+                <span class="phase-timeframe">Phase I: 1 - 2 Years</span>
+                <h2 class="phase-title">Skill Acquisition & Industry Exposure</h2>
+                <p class="phase-description">The immediate focus is to translate my academic coursework and independent lab projects into production-level industry experience.</p>
+                <ul class="phase-bullets">
+                    <li><strong>Industry Internships:</strong> Secure software engineering or embedded systems internships to gain hands-on experience with agile development cycles and industry-standard version control.</li>
+                    <li><strong>Advanced Prototyping:</strong> Continue expanding my independent portfolio by building complex cross-disciplinary projects, focusing on microcontrollers (ESP32, ARM) and test-driven development frameworks like Google Test.</li>
+                    <li><strong>Tool Mastery:</strong> Deepen my proficiency in low-level languages (C, C++, RISC-V) while maintaining a strong grasp of scalable backend architectures.</li>
+                </ul>
+            </div>
 
-        <section class="goal-section">
-            <h2>Core Focus Areas</h2>
-            <ul class="focus-list">
-                <li><strong>Embedded Systems & Firmware:</strong> Designing and debugging systems at the register level, optimizing memory alignment, and pushing the performance limits of microcontrollers and low-level hardware.</li>
-                <li><strong>Platform Optimization & Migration:</strong> Applying structural problem-solving to legacy systems, optimizing databases, and ensuring smooth platform migrations without compromising data integrity or user experience.</li>
-                <li><strong>Developer & Student Tooling:</strong> Expanding on my experience building intuitive resources—like internship discovery platforms—to create software that empowers other developers and engineers.</li>
-            </ul>
-        </section>
+            <!-- Mid Term -->
+            <div class="phase">
+                <span class="phase-timeframe">Phase II: 3 - 5 Years</span>
+                <h2 class="phase-title">Academic Completion & Professional Foundation</h2>
+                <p class="phase-description">This phase centers on formalizing my education and establishing myself as a highly capable technical contributor.</p>
+                <ul class="phase-bullets">
+                    <li><strong>Degree Completion:</strong> Graduate with a Bachelor of Science in Computer Engineering from the Georgia Institute of Technology, having completed advanced coursework in systems architecture and digital signal processing.</li>
+                    <li><strong>Full-Time Integration:</strong> Transition into a full-time role as an Embedded Software Engineer or Backend Systems Developer.</li>
+                    <li><strong>Hardware-Software Co-Design:</strong> Master the challenges of production-level hardware limitations, memory manipulation, and real-time operating systems (RTOS) to write perfectly optimized code.</li>
+                </ul>
+            </div>
 
-        <section class="goal-section">
-            <h2>Long-Term Vision</h2>
-            <p>Ultimately, my goal is to architect complex systems from the ground up, maintaining a holistic view of the entire technology stack. I want to lead engineering teams in environments where hardware constraints and software scalability intersect—whether that involves designing next-generation computing architectures, developing robust game engines, or building comprehensive enterprise platforms. I aim to be an engineer who not only understands the logic gates and memory registers but can also translate that technical foundation into seamless, high-performance applications.</p>
-        </section>
-    </main>
+            <!-- Long Term -->
+            <div class="phase">
+                <span class="phase-timeframe">Phase III: 5+ Years</span>
+                <h2 class="phase-title">Systems Architecture Leadership</h2>
+                <p class="phase-description">By leveraging my comprehensive understanding of both physical constraints and software scalability, I aim to transition into architectural leadership.</p>
+                <ul class="phase-bullets">
+                    <li><strong>Technical Strategy:</strong> Drive the technical direction for complex, integrated product development, such as advanced IoT infrastructures or consumer hardware ecosystems.</li>
+                    <li><strong>Cross-Functional Leadership:</strong> Lead and mentor engineering teams, acting as the technical translator between hardware engineers, software developers, and product managers.</li>
+                    <li><strong>Innovation:</strong> Architect robust systems that balance extreme performance requirements with user experience, maintaining high reliability at scale.</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Right Sidebar Tabs -->
+    <div class="sidebar">
+        <a href="index.html" class="tab">Home</a>
+        <a href="about.html" class="tab">About</a>
+        <a href="projects.html" class="tab">Projects</a>
+        <a href="goals.html" class="tab active">Goals</a>
+        <a href="resume.html" class="tab">Resume</a>
+    </div>
+
+</div>
 
 </body>
 </html>
